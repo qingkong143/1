@@ -112,10 +112,6 @@ div#post {
   background: rgba(255, 255, 255, 0.9);
 }
 
-/* 页脚透明 */
-#footer {
-  background: transparent !important;
-}
 
 /* 分页页面 */
 div#page {
