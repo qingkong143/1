@@ -1,1 +1,1 @@
-var posts=["2023/05/28/test/","2023/05/26/更新啦/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["2023/05/26/更新啦/","2023/05/28/test/","2023/06/07/Windows系统推荐和安装，简单的优化和美化以及一些软件分享/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
