@@ -1,0 +1,15 @@
+
+/* 所有页面实现毛玻璃特效 */
+
+body {
+
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABlBMVEX//////8f+Hh4/fn5/v7+/u1v7/u1v7Pz9/u1v7Pz9/u1v7Pz9/u1v7Pz9X5+fn5/v7+/u1v7/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5/v7+/u1v7Pz9X5+fn5所有页面实现毛玻璃效果) no-repeat center top fixed;
+
+  background-size: cover;
+
+  -webkit-backdrop-filter: blur(8px);
+
+  backdrop-filter: blur(8px);
+
+}
+
