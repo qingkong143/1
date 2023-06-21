@@ -1,4 +1,4 @@
-/* 侧边栏个人信息卡片动态渐变色 */
+/* 侧边栏个人信息卡片动态渐变色 
 #aside-content > .card-widget.card-info {
   background: linear-gradient(
     135deg,
@@ -16,6 +16,7 @@
 background-position: 0% 0%;
 }
 }
+*/
 
 /* 黑夜模式适配 */
 [data-theme="dark"] #aside-content > .card-widget.card-info {
@@ -26,4 +27,234 @@ background-position: 0% 0%;
 #aside-content > .card-widget.card-info > #card-info-btn {
   background-color: #3eb8be;
   border-radius: 8px;
+}
+
+#welcome-info {
+    overflow: hidden;
+    border-radius: 14px;
+    --kouseki-welcome-color: #49B1F5;
+    --kouseki-ip-color: #49B1F5;
+    --kouseki-gl-size: 16px!important;
+}
+
+body {
+    --theme: #0099FF;
+    --background: #ffffff;
+    --main: #303133;
+    --routine: #606266;
+    --minor: #909399;
+    --seat: #c0c4cc;
+    --classA: #dcdfe6;
+    --classB: #e4e7ed;
+    --classC: #ebeef5;
+    --classD: #f2f6fc;
+    --radius-wrap: 10px;
+    --radius-inner: 15px;
+    --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --box-shadow: 20px 20px 50px rgba(0,0,0,0.2);
+    --border-radius:10px;
+    --border-top: 2px solid rgba(255,255,255,0.7);
+    --border-left: 2px solid rgba(255,255,255,0.7); 
+    --background: rgba(255,255,255,0.1);
+    --backdrop-filter: blur(5px);
+}
+body {
+background-position:top center;
+background-size: 100% auto;
+}
+/* 展示内容整体 */
+#content {
+position: fixed;
+/* top可以调节显示内容距离手机顶部的距离 */
+top: 45px;
+}
+/* 搜索框 */
+.search_bar {
+/* 阴影效果 */
+box-shadow: 0 0 18px rgba(70,70,40,0.255);
+/* 模糊效果 */
+backdrop-filter: blur(0px);
+/* 背景色 */
+background-color: rgba(255,255,255,.100);
+/* 圆角 */
+border-radius: 5px;
+display: table;
+/* 宽度 */
+width: 88%;
+/* 高度 */
+height: 30px;
+max-width: 400px;
+margin: -5px auto;
+text-align:center;
+font-size:30px;
+border:0;
+outline:none;
+font-weight:560;
+border-style: solid;
+border-width:1px;
+border-color:rgba(250,250,210,50);
+border-radius: 10px;
+-webkit-transition-duration: 0.4s;
+transition-duration: 0.4s;
+animation:search-bar 1s;
+}
+/* 搜索框的动画 */
+@keyframes search-bar {
+0% {max-width: 100px;}
+100% {max-width: 400px;}
+}
+/* 用于设置搜索时的词条联想框 */
+.bdSug_wpr {
+border-radius:0px 0px,15px 15px;
+border:0px none #7C9D88 !important;
+border-top:13px solid transparent !important;
+background: rgba(93, 128, 110,50) !important;
+backdrop-filter: blur(0px);
+}
+/*搜索联想框文字颜色*/
+.bdSug_wpr td {
+background-color: transparent !important;
+color: #FFFFFF;
+}
+/*搜索按钮*/
+.search.icon {
+border: 0;
+}
+.search.icon:before {
+position: absolute;
+top: -6px; /* 上下 */
+left: 0px; /* 左右 */
+font-size: 20px; /* 调大小 */
+content: '✿';
+height: 0;
+background-color: currentColor;
+color: #FFFFFF;
+}
+/*输入框*/
+#search_input {
+color: #FFFFFF;
+font-size: 16px;;
+}
+/*搜索栏一句*/
+input::placeholder {
+color: #FFFFFF;
+font-size: 16px;
+/* 调整句首的间距 */
+text-indent:10px
+}
+/* 背景一言 */
+div#hitokoto {
+position: absolute;
+margin: auto;
+width: 100%;
+hight: 100%;
+top: 700px;
+font-size:16px;
+color: black;
+}
+/*日期*/
+#time {
+color: #FFFFFF;
+font-size:16px;
+top:-50px;
+}
+/*时间*/
+#times {
+color: #FFFFFF;
+font-size:33px;
+top:-30px;
+} 
+
+/* 全局宽度 */
+.layout {
+  max-width: 1400px;
+}
+
+/* 侧边卡片栏宽度 */
+.aside-content {
+  max-width: 318px;
+  min-width: 300px;
+}
+
+/* 平板尺寸自适应(不启用侧边栏宽度限制) */
+@media screen and (max-width: 900px) {
+  .aside-content {
+    max-width: none !important;
+    padding: 0 5px 0 5px;
+  }
+}
+
+/* 除了首页以外其他页面隐藏卡片，并采用宽屏显示 */
+#archive,
+#page,
+#category,
+#tag {
+  width: 100%;
+}
+.page:not(.page.home) .aside-content {
+  display: none;
+}
+
+.card-info-avatar .author-status-box {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% - 28px);
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d0d7de;
+  border-radius: 2em;
+  background-color: #f8f8f8f8;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .card-info-avatar .author-status-box {
+  background-color: #222222f2;
+  border: 1px solid #5c6060;
+}
+
+.card-info-avatar .author-status-box .author-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 5px;
+}
+
+.card-info-avatar .author-status-box:hover {
+  width: 105px;
+}
+
+.card-info-avatar .author-status-box:hover .author-status span {
+  width: 105px;
+  margin-left: 4px;
+}
+
+.card-info-avatar .author-status-box .author-status span {
+  width: 0;
+  font-size: 12px;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: 0.4s;
+}
+
+.card-widget .card-info-avatar {
+  display: inline-block;
+  position: relative;
+}
+
+/* 个人信息卡片背景图 */
+[data-theme="light"] #aside-content > .card-widget.card-info {
+  background-image: url(https://sourcebucket.s3.ladydaily.com/img/snowflower.webp);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background-image: url(https://sourcebucket.s3.ladydaily.com/img/aurora.webp);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
 }
