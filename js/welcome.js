@@ -26,7 +26,7 @@ function getDistance(e1, n1, e2, n2) {
 
 function showWelcome() {
 
-    let dist = getDistance(121.413921, 31.089290, ipLocation.data.lng, ipLocation.data.lat); //改为自己的经纬度，写法121.413921（经度lng）,31.089290（纬度lat）
+    let dist = getDistance(114.783814, 24.905769, ipLocation.data.lng, ipLocation.data.lat); //改为自己的经纬度，写法121.413921（经度lng）,31.089290（纬度lat）
     let pos = ipLocation.data.country;
     let ip = ipLocation.ip;
     let posdesc;
@@ -132,8 +132,14 @@ function showWelcome() {
                     posdesc = "井邑白云间，岩城远带山";
                     break;
                 case "江西省":
-                    posdesc = "落霞与孤鹜齐飞，秋水共长天一色";
-                    break;
+                    switch (ipLocation.result.ad_info.city) {
+                        case "赣州市":
+                            posdesc = "同乡相逢喜乐多，笑语盈盈情意浓";
+                            break;
+                        default:
+                            posdesc = "落霞与孤鹜齐飞，秋水共长天一色";
+                            break;
+                    }
                 case "山东省":
                     posdesc = "遥望齐州九点烟，一泓海水杯中泻";
                     break;
@@ -231,7 +237,7 @@ function showWelcome() {
     try {
         //自定义文本和需要放的位置
         document.getElementById("welcome-info").innerHTML =
-            `欢迎来自 <b><span style="color: var(--kouseki-ip-color);font-size: var(--kouseki-gl-size)">${pos}</span></b> 的小友💖<br>${posdesc}🍂<br>当前位置距博主约 <b><span style="color: var(--kouseki-ip-color)">${dist}</span></b> 公里！<br>您的IP地址为：<b><span style="font-size: 12px;">${ip}</span></b><br>${timeChange} <br>`;
+            `欢迎来自 <b><span style="color: var(--kouseki-ip-color);font-size: var(--kouseki-gl-size)">${pos}</span></b> 的朋友<br>${posdesc}🍂<br>当前位置距清空约 <b><span style="color: var(--kouseki-ip-color)">${dist}</span></b> 公里！<br>您的IP地址为：<b><span style="font-size: 12px;">${ip}</span></b><br>${timeChange} <br>`;
     } catch (err) {
         console.log("Pjax无法获取元素");
     }
