@@ -109,7 +109,7 @@ function showWelcome() {
                             posdesc = "豫州之域，天地之中";
                             break;
                         case "南阳市":
-                            posdesc = "臣本布衣，躬耕于南阳此南阳非彼南阳！";
+                            posdesc = "臣本布衣，躬耕于南阳，此南阳非彼南阳！";
                             break;
                         case "驻马店市":
                             posdesc = "峰峰有奇石，石石挟仙气嵖岈山的花很美哦！";
@@ -140,6 +140,7 @@ function showWelcome() {
                             posdesc = "落霞与孤鹜齐飞，秋水共长天一色";
                             break;
                     }
+                    break;
                 case "山东省":
                     posdesc = "遥望齐州九点烟，一泓海水杯中泻";
                     break;
