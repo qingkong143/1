@@ -7,32 +7,30 @@ fetch('https://api.qjqq.cn/api/Local')
     })
     .catch(error => console.error('Error:', error));
 
-
 function getDistance(e1, n1, e2, n2) {
-    const R = 6371;
-    const { sin, cos, asin, PI, hypot } = Math;
+    const R = 6371
+    const { sin, cos, asin, PI, hypot } = Math
     let getPoint = (e, n) => {
-        e *= PI / 180;
-        n *= PI / 180;
-        return { x: cos(n) * cos(e), y: cos(n) * sin(e), z: sin(n) };
-    };
+        e *= PI / 180
+        n *= PI / 180
+        return { x: cos(n) * cos(e), y: cos(n) * sin(e), z: sin(n) }
+    }
 
-    let a = getPoint(e1, n1);
-    let b = getPoint(e2, n2);
-    let c = hypot(a.x - b.x, a.y - b.y, a.z - b.z);
-    let r = asin(c / 2) * 2 * R;
+    let a = getPoint(e1, n1)
+    let b = getPoint(e2, n2)
+    let c = hypot(a.x - b.x, a.y - b.y, a.z - b.z)
+    let r = asin(c / 2) * 2 * R
     return Math.round(r);
 }
 
 function showWelcome() {
 
-    let dist = getDistance(114.783814, 24.905769, ipLocation.data.lng, ipLocation.data.lat); //改为自己的经纬度，写法121.413921（经度lng）,31.089290（纬度lat）
-    let pos = ipLocation.data.country;
-    let ip = ipLocation.ip;
+    let dist = getDistance(114.79648, 24.91675, ipLocation.result.location.lng, ipLocation.result.location.lat); //这里记得换成自己的经纬度
+    let pos = ipLocation.result.ad_info.nation;
+    let ip;
     let posdesc;
-
-    // 以下的代码需要根据新API返回的结果进行相应的调整
-    switch (ipLocation.data.country) {
+    //根据国家、省份、城市信息自定义欢迎语
+    switch (ipLocation.result.ad_info.nation) {
         case "日本":
             posdesc = "よろしく，一起去看樱花吗";
             break;
@@ -58,8 +56,9 @@ function showWelcome() {
             posdesc = "拾起一片枫叶赠予你";
             break;
         case "中国":
-            pos = ipLocation.data.prov + " " + ipLocation.data.city + " " + ipLocation.data.district;
-            switch (ipLocation.data.prov) {
+            pos = ipLocation.result.ad_info.province + " " + ipLocation.result.ad_info.city + " " + ipLocation.result.ad_info.district;
+            ip = ipLocation.result.ip;
+            switch (ipLocation.result.ad_info.province) {
                 case "北京市":
                     posdesc = "北——京——欢迎你~~~";
                     break;
@@ -109,7 +108,7 @@ function showWelcome() {
                             posdesc = "豫州之域，天地之中";
                             break;
                         case "南阳市":
-                            posdesc = "臣本布衣，躬耕于南阳，此南阳非彼南阳！";
+                            posdesc = "臣本布衣，躬耕于南阳此南阳非彼南阳！";
                             break;
                         case "驻马店市":
                             posdesc = "峰峰有奇石，石石挟仙气嵖岈山的花很美哦！";
@@ -132,14 +131,7 @@ function showWelcome() {
                     posdesc = "井邑白云间，岩城远带山";
                     break;
                 case "江西省":
-                    switch (ipLocation.result.ad_info.city) {
-                        case "赣州市":
-                            posdesc = "同乡相逢喜乐多，笑语盈盈情意浓";
-                            break;
-                        default:
-                            posdesc = "落霞与孤鹜齐飞，秋水共长天一色";
-                            break;
-                    }
+                    posdesc = "落霞与孤鹜齐飞，秋水共长天一色";
                     break;
                 case "山东省":
                     posdesc = "遥望齐州九点烟，一泓海水杯中泻";
@@ -238,10 +230,11 @@ function showWelcome() {
     try {
         //自定义文本和需要放的位置
         document.getElementById("welcome-info").innerHTML =
-            `欢迎来自 <b><span style="color: var(--kouseki-ip-color);font-size: var(--kouseki-gl-size)">${pos}</span></b> 的朋友<br>${posdesc}🍂<br>当前位置距清空约 <b><span style="color: var(--kouseki-ip-color)">${dist}</span></b> 公里！<br>您的IP地址为：<b><span style="font-size: 12px;">${ip}</span></b><br>${timeChange} <br>`;
+            `欢迎来自 <b><span style="color: var(--kouseki-ip-color);font-size: var(--kouseki-gl-size)">${pos}</span></b> 的小友💖<br>${posdesc}🍂<br>当前位置距博主约 <b><span style="color: var(--kouseki-ip-color)">${dist}</span></b> 公里！<br>您的IP地址为：<b><span>${ip}</span></b><br>${timeChange} <br>`;
     } catch (err) {
-        console.log("Pjax无法获取元素");
+         console.log("Pjax无法获取元素")
     }
 }
 window.onload = showWelcome;
-document.addEventListener("pjax:complete", showWelcome);
+// 如果使用了pjax在加上下面这行代码
+document.addEventListener('pjax:complete', showWelcome);
