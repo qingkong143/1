@@ -15843,6 +15843,10 @@ body[data-type="album"] #page .page-title {
 html,
 body {
   height: 100%;
+  background-image: url("path/to/your/image.jpg"); /* 背景图片的路径 */
+  background-position: center top; /* 背景图片在视窗中的位置 */
+  background-repeat: no-repeat; /* 背景图片的重复方式 */
+  background-size: cover; /* 背景图片的尺寸适应方式 */
 }
 
 h1#site-title {
@@ -15879,9 +15883,10 @@ svg.icon {
 }
 
 /*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */
-/* #page-header:not(.not-top-img):before {
+#page-header:not(.not-top-img):before {
   background-color: transparent !important;
-} */
+  background: url(https://img01.anheyu.com/useruploads/0/2023/07/03/64a274a7ac606.jpg)
+}
 
 /* 文章页面正文背景 */
 div#post {
