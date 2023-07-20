@@ -26,7 +26,7 @@ function getDistance(e1, n1, e2, n2) {
 
 function showWelcome() {
 
-    let dist = getDistance(114.78993, 24.91105, ipLocation.data.lng, ipLocation.data.lat);
+    let dist = getDistance(114.94050,25.83518, ipLocation.data.lng, ipLocation.data.lat);
     let pos = ipLocation.data.country;
     let ip = ipLocation.ip;
     let posdesc;
