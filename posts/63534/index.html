@@ -320,7 +320,7 @@ document.addEventListener('pjax:error', (e) => {
       console.log('已挂载butterfly_categories_card')
       parent_div_git.insertAdjacentHTML("afterbegin",item_html)
       }
-    if( document.getElementById('recent-posts') && (location.pathname ==='/home'|| '/home' ==='all')){
+    if( document.getElementById('recent-posts') && (location.pathname ==='/home/'|| '/home/' ==='all')){
     butterfly_categories_card_injector_config()
     }
   </script><script data-pjax>
@@ -363,7 +363,7 @@ document.addEventListener('pjax:error', (e) => {
     }
   var elist = 'undefined'.split(',');
   var cpage = location.pathname;
-  var epage = '/home';
+  var epage = '/home/';
   var flag = 0;
 
   for (var i=0;i<elist.length;i++){
