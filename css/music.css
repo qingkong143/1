@@ -215,6 +215,7 @@ body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time
 }
 
 /* **** 移动端样式 ***** */
+/*
 @media screen and (max-width: 768px) {
   body:has(#anMusic-page) #rightside {
     display: none;
@@ -223,7 +224,9 @@ body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time
   body:has(#anMusic-page) #page {
     z-index: auto;
   }
+  */
   /* 歌曲列表 */
+  /*
   #anMusic-page .aplayer-list {
     position: fixed;
     z-index: 1002;
@@ -281,7 +284,9 @@ body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time
   #anMusic-page ol > li.aplayer-list-light span.aplayer-list-author {
     right: 15px;
   }
+  */
   /* 歌词信息 */
+  /*
   #anMusic-page .aplayer-body {
     width: 100%;
 
@@ -301,7 +306,9 @@ body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time
   #anMusic-page .aplayer-info .aplayer-lrc p.aplayer-lrc-current {
     color: #33a673;
   }
+  */
   /* 控制按键和进度条 */
+  /*
   #anMusic-page .aplayer-info .aplayer-controller {
     width: 100%;
     bottom: 100px;
@@ -362,3 +369,4 @@ body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time
     left: -66px;
   }
 }
+*/
